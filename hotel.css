@@ -1,0 +1,245 @@
+.gal{
+    height: 200px;
+    margin-left: 30px;
+    display: inline-flex;
+    
+}
+.imagepad{
+    padding: 5px;
+}
+.name{
+    text-align: center;
+    text-decoration: wavy;
+}
+
+
+#cards_landscape_wrap-2{
+text-align: center;
+background: #F7F7F7;
+}
+#cards_landscape_wrap-2 .container{
+padding-top: 5px;
+}
+#cards_landscape_wrap-2 a{
+text-decoration: none;
+outline: none;
+}
+#cards_landscape_wrap-2 .card-flyer {
+border-radius: 5px;
+}
+#cards_landscape_wrap-2 .card-flyer .image-box{
+background: #ffffff;
+overflow: hidden;
+box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.50);
+border-radius: 5px;
+}
+#cards_landscape_wrap-2 .card-flyer .image-box img{
+width: 100%;
+height: 300px;
+}
+#cards_landscape_wrap-2 .card-flyer:hover .image-box img{
+opacity: 0.7;
+-webkit-transform:scale(1.15);
+-moz-transform:scale(1.15);
+-ms-transform:scale(1.15);
+-o-transform:scale(1.15);
+transform:scale(1.15);
+}
+#cards_landscape_wrap-2 .card-flyer .text-box{
+text-align: center;
+}
+#cards_landscape_wrap-2 .card-flyer .text-box .text-container{
+padding: 30px 18px;
+}
+#cards_landscape_wrap-2 .card-flyer{
+background: #FFFFFF;
+margin-top: 50px;
+-webkit-transition: all 0.2s ease-in;
+-moz-transition: all 0.2s ease-in;
+-ms-transition: all 0.2s ease-in;
+-o-transition: all 0.2s ease-in;
+transition: all 0.2s ease-in;
+box-shadow: 0px 3px 4px rgba(0, 0, 0, 0.40);
+}
+#cards_landscape_wrap-2 .card-flyer:hover{
+background: #fff;
+box-shadow: 0px 15px 26px rgba(0, 0, 0, 0.50);
+-webkit-transition: all 0.2s ease-in;
+-moz-transition: all 0.2s ease-in;
+-ms-transition: all 0.2s ease-in;
+-o-transition: all 0.2s ease-in;
+transition: all 0.2s ease-in;
+margin-top: 50px;
+}
+#cards_landscape_wrap-2 .card-flyer .text-box p{
+margin-top: 10px;
+margin-bottom: 0px;
+padding-bottom: 0px; 
+font-size: 14px;
+letter-spacing: 1px;
+color: #000000;
+}
+#cards_landscape_wrap-2 .card-flyer .text-box h6{
+margin-top: 0px;
+margin-bottom: 4px; 
+font-size: 28px;
+font-weight: bold;
+font-family: 'Roboto Black', sans-serif;
+letter-spacing: 1px;
+color: rgb(255, 174, 0);
+}
+
+@media screen and (max-width: 800px){
+    .gal{
+        height: 150px;
+        width:80%;
+        overflow-x: hidden  !important;
+    }
+}
+
+.container2 {
+    position: sticky;
+    top:0% ;
+    background-color: rgb(253, 253, 255);
+    height:max-content ; 
+    width: 200px;
+    padding: 10px;
+    text-align: left;
+    margin-left: 50px;
+    grid-area: container2;
+    border: 1px solid rgb(2, 2, 2);
+    border-radius: 10%;
+}
+.menuTiles {         
+    grid-area: menuTiles;
+    margin-left: 120px;
+}
+
+
+.menuBar {
+    margin-top: 50px;
+    display: grid;
+    grid-template-areas: 
+    'container2 menuTiles menuTiles menuTiles';
+}
+
+.Menu{
+    font-weight: bolder;
+    font-size: 30px;
+    text-align: left;
+    color: rgb(77, 4, 4);
+}
+.menubtn {
+    text-align: left;
+    border: none;
+    padding: 10px;
+    width: 160px; 
+    color: black;
+  /* text-decoration: none;       */
+}
+
+.col{
+    color: black;
+    text-decoration: none;
+}
+
+.menu {
+    
+    position: relative;
+    display: inline-block;
+}
+.menuItem {
+    padding: 0px 10px;
+    display: none;
+    position: absolute;
+    min-width: 160px;
+    z-index: 1;
+}
+.menuItem .a{
+    display: block;
+    text-decoration: none;
+    float: none;
+}
+.menu:hover {
+    height: 80px;
+}
+.menu:hover .menuItem {
+    display: block;
+}
+.dishes {
+    border: 1px solid lightslategrey;
+    margin-left: -150px;
+    padding: 16px;
+    border-radius: 10px;
+    background-color: lightyellow;
+    grid-area: dishes;
+    width: 600px;
+}
+
+.imageDish {
+    margin-left: 15px;
+    width: 160px;
+    grid-area: imageDish;
+}
+.item {
+    grid-area: item;
+    width:200px;
+}
+.checked {
+     color: orange;
+    }
+.rate {
+    color: rgb(37, 37, 36) ;
+    grid-area: rate;
+}
+.cart {
+    grid-area: cart;
+    border: 1px solid burlywood;
+}
+
+.order {
+    grid-area: order;
+    border: 1px solid burlywood;
+}
+.rating {
+    grid-area: rating;
+    margin-left: 0px;
+}
+
+.dishes{
+    display: grid;
+    grid-template-areas:
+    "item item imageDish imageDish"
+    "rating rating imageDish imageDish"
+    "rate rate cart order" ;
+    margin-bottom: 20px;
+}
+@media screen and (max-width :768px){
+  .container2{
+    position:absolute;
+    height:max-content ; 
+    width: 120px;
+    margin-left: 3px;
+    float: left;
+  }
+  .menuTiles{
+    margin-left: 310px;
+     position:absolute;
+     width: 200px;
+  }
+  .dishes{
+    width: 300px;
+    height: auto;
+  }
+  .imageDish{
+      margin-left: 0px;
+  }
+  .item {
+    grid-area: item;
+    width:0px;
+}
+
+}
+.rating {
+    margin-left: 0px;
+}

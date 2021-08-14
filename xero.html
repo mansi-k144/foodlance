@@ -1,0 +1,917 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <script src="store.js" async></script>
+    <title>Xero Degrees</title>
+
+    <style>
+        .gal{
+            height: 200px;
+            margin-left: 100px;
+            display: inline-flex;
+        }
+        .imagepad{
+            padding: 5px;
+        }
+        .name{
+            text-align: center;
+            text-decoration: wavy;
+        }
+
+
+#cards_landscape_wrap-2{
+  text-align: center;
+  background: #F7F7F7;
+}
+#cards_landscape_wrap-2 .container{
+  padding-top: 5px;
+}
+#cards_landscape_wrap-2 a{
+  text-decoration: none;
+  outline: none;
+}
+#cards_landscape_wrap-2 .card-flyer {
+  border-radius: 5px;
+}
+#cards_landscape_wrap-2 .card-flyer .image-box{
+  background: #ffffff;
+  overflow: hidden;
+  box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.50);
+  border-radius: 5px;
+}
+#cards_landscape_wrap-2 .card-flyer .image-box img{
+  width: 100%;
+  height: 300px;
+}
+#cards_landscape_wrap-2 .card-flyer:hover .image-box img{
+  opacity: 0.7;
+  -webkit-transform:scale(1.15);
+  -moz-transform:scale(1.15);
+  -ms-transform:scale(1.15);
+  -o-transform:scale(1.15);
+  transform:scale(1.15);
+}
+#cards_landscape_wrap-2 .card-flyer .text-box{
+  text-align: center;
+}
+#cards_landscape_wrap-2 .card-flyer .text-box .text-container{
+  padding: 30px 18px;
+}
+#cards_landscape_wrap-2 .card-flyer{
+  background: #FFFFFF;
+  margin-top: 50px;
+  -webkit-transition: all 0.2s ease-in;
+  -moz-transition: all 0.2s ease-in;
+  -ms-transition: all 0.2s ease-in;
+  -o-transition: all 0.2s ease-in;
+  transition: all 0.2s ease-in;
+  box-shadow: 0px 3px 4px rgba(0, 0, 0, 0.40);
+}
+#cards_landscape_wrap-2 .card-flyer:hover{
+  background: #fff;
+  box-shadow: 0px 15px 26px rgba(0, 0, 0, 0.50);
+  -webkit-transition: all 0.2s ease-in;
+  -moz-transition: all 0.2s ease-in;
+  -ms-transition: all 0.2s ease-in;
+  -o-transition: all 0.2s ease-in;
+  transition: all 0.2s ease-in;
+  margin-top: 50px;
+}
+#cards_landscape_wrap-2 .card-flyer .text-box p{
+  margin-top: 10px;
+  margin-bottom: 0px;
+  padding-bottom: 0px; 
+  font-size: 14px;
+  letter-spacing: 1px;
+  color: #000000;
+}
+#cards_landscape_wrap-2 .card-flyer .text-box h6{
+  margin-top: 0px;
+  margin-bottom: 4px; 
+  font-size: 28px;
+  font-weight: bold;
+  font-family: 'Roboto Black', sans-serif;
+  letter-spacing: 1px;
+  color: rgb(255, 174, 0);
+}
+
+ @media screen and (max-width: 800px){
+            .gal{
+                height: 150px;
+                width:80%;
+                overflow-x: hidden  !important;
+            }
+ }
+
+        .container2 {
+            background-color: rgb(253, 253, 255);
+            height:max-content ; 
+            width: 200px;
+            padding: 10px;
+            text-align: left;
+            margin-left: 100px;
+            grid-area: container2;
+            grid-template-columns: 180px;
+            border: 1px solid rgb(2, 2, 2);
+            border-radius: 10%;
+            position: sticky;
+            top: 10px;
+        }
+        .menuTiles {  
+            display: flex;       
+            grid-area: menuTiles;
+            margin-left: 0px;
+            display: grid;
+            grid-template-areas: 
+             'main-container container3';
+        }
+        
+
+        .menuBar {
+            display: flex;
+            margin-top: 50px;
+            display: grid;
+            grid-template-columns: 350px;
+            grid-template-areas: 
+            'container2 menuTiles ';
+        }
+
+        .Menu{
+            font-weight: bolder;
+            font-size: 30px;
+            text-align: left;
+            color: rgb(77, 4, 4);
+        }
+        .menubtn {
+            text-align: left;
+            border: none;
+            padding: 10px;
+            width: 160px; 
+            color: black;
+          /* text-decoration: none;       */
+        }
+        
+        .col{
+            color: black;
+            text-decoration: none;
+        }
+
+        .menu {
+            
+            position: relative;
+            display: inline-block;
+        }
+        .menuItem {
+            padding: 0px 10px;
+            display: none;
+            position: absolute;
+            min-width: 160px;
+            z-index: 1;
+        }
+        .menuItem .a{
+            display: block;
+            text-decoration: none;
+            float: none;
+        }
+        .menu:hover {
+            height: 80px;
+        }
+        .menu:hover .menuItem {
+            display: block;
+        }
+        .dishes {
+            border: 1px solid lightslategrey;
+            margin-left: -150px;
+            padding: 16px;
+            border-radius: 10px;
+            background-color: lightyellow;
+            grid-area: dishes;
+            width: 600px;
+        }
+        
+        .imageDish {
+            margin-left: 15px;
+            width: 160px;
+            grid-area: imageDish;
+        }
+        .item {
+            grid-area: item;
+        }
+        .checked {
+             color: orange;
+            }
+        .rate {
+            color: rgb(37, 37, 36) ;
+            grid-area: rate;
+        }
+        .cart {
+            grid-area: cart;
+            border: 1px solid burlywood;
+        }
+        
+        .order {
+            grid-area: order;
+            border: 1px solid burlywood;
+        }
+        .rating {
+            grid-area: rating;
+            margin-left: 0px;
+        }
+
+        .dishes{
+            display: grid;
+            grid-template-areas:
+            "item item imageDish imageDish"
+            "rating rating imageDish imageDish"
+            "rate rate cart order" ;
+            margin-bottom: 20px;
+        }
+        @media screen and (max-width :768px){
+  .container2{
+    position: static;
+    height:max-content ; 
+    width: 150px;
+    margin-left: 3px;
+    float: left;
+  }
+
+  .shop-item{
+      width: 300px;
+  }
+  .menuTiles{
+    margin-left: 120px;
+     position:absolute;
+     width: 10px;
+  }
+.container3{
+    display: none;
+}
+        }      
+  
+       
+ 
+    </style>
+</head>
+<body>
+    <div id="cards_landscape_wrap-2">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
+                    <a href="">
+                        <div class="card-flyer">
+                            <div class="text-box">
+                                <div class="image-box">
+                                    <img src="https://b.zmtcdn.com/data/pictures/chains/7/18729557/2b7d240eb6e95d2fba0384ecc5c977d7.jpg" alt="" style="object-fit: cover;" >
+                                </div>
+                                <div class="text-container">
+                                    <h6>Xero Degrees</h6>
+                                    <p>Pizza, Pasta, Sandwich, American, Burger, Fast Food, Beverages</p>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+             </div>
+        </div>
+    </div>
+                
+    <br> <br> 
+
+    <div class="gal">
+        <img class="imagepad" src="https://res.cloudinary.com/swiggy/image/upload/f_auto,q_auto,fl_lossy/qhgasjuizncj7l6uzlam" alt="">
+        <img class="imagepad" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQBixiEtbG4JuGjXHkeqD3qWYq8zLLLPIwpEg&usqp=CAU" alt="">
+        <img class="imagepad" src="https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/lhtggimrlx2xrhx4dlim" alt="">
+        <img class="imagepad" src="https://www.fjk.city/wp-content/uploads/2020/10/xero-degrees-delhi-fast-food-ukwnih5laa-thegem-blog-timeline-large.jpg" alt="">
+        <img class="imagepad" src="http://lh3.googleusercontent.com/r5dbn6BuSowicxYLo-E3hI4tcPoy1TjYqoFW5hk3xu8MXZyU5-5yki0_WbJTG5wRZjLpwCbp9ZeS7U65rlhdx8_DO1NiynoPBP3lUtVc=s650" alt="">
+            </div>
+    
+    <div class="menuBar">
+      <div class="container2">
+             <div class="Menu" >Menu</div><hr>
+             <div class="menu">
+                  <a href="#happy" class="menubtn">Quick Bites <i class="fa fa-caret-down"></i></a>
+                   <div class="menuItem">
+                        <a class="col" href="#happy">Pizza</a> <br>
+                       <a class="col" href="#combo">Pasta</a> <br>
+                       <a class="col" href="#comb">Burgers</a> <br>
+
+                   </div>
+              </div> <hr>
+              <div class="menu">
+                  <a href="#burgers" class="menubtn">Snacks <i class="fa fa-caret-down"></i></a>
+                   <div class="menuItem">
+                        <a class="col" href="#burgers">Fries In A Jar</a> <br>
+                       <a class="col" href="#fries">Garlic Breads</a> <br>
+                       <a class="col" href="#puff">Nachos</a> <br>
+                   </div>
+              </div> <br> <hr>
+              <div class="menu">
+                  <a href="#flurry" class="menubtn">Desserts <i class="fa fa-caret-down"></i></a>
+                   <div class="menuItem">
+                        <a class="col" href="#flurry">Waffles</a> <br>
+                   </div>
+              </div> <br> <hr>
+
+              <div class="menu">
+                <a href="#soft" class="menubtn">Beverages <i class="fa fa-caret-down"></i></a>
+                 <div class="menuItem">
+                     <a class="col" href="#soft">Shakes</a> <br>
+                     <a class="col" href="#hot">Coolers</a> <br>
+                 </div>
+            </div>  <hr>
+      </div>
+       
+      <div class="menuTiles"> 
+      
+        <section class="main-container">
+         <section class="container1 content-section">
+            <h2 class="section-header" id="happy">Pizzas</h2>
+            <div class="shop-items">
+                <div class="shop-item">
+                    <span class="shop-item-title"> Makhani Paneer Pizza </span>
+                    <img class="shop-item-image" src="https://brothersbaker.in/wp-content/uploads/2020/09/makhan-paneer-pizza.jpg" width="100px">
+                    <h5 style="margin-left: 130px;">Loaded with makhani paneer and cheese. </h5>
+                    <div class="rating" style="margin-left: 130px;">
+                              <span class="fa fa-star checked"></span>
+                              <span class="fa fa-star checked"></span>
+                              <span class="fa fa-star checked"></span>
+                              <span class="fa fa-star checked"></span>
+                              <span class="fa fa-star "></span>
+                          </div>
+                    <div class="shop-item-details">
+                        <span class="shop-item-price">₹ 299</span> 
+                        <button class="btn btn-primary shop-item-button" type="button">ADD TO CART</button>
+                    </div>
+                </div>
+                <div class="shop-item">
+                    <span class="shop-item-title">Chicken Tikka Pizza </span>
+                    <img class="shop-item-image" src="https://kfoods.com/images1/newrecipeicon/chicken-tikka-pizza_9402.jpg" width="100px">
+                    <h5 style="margin-left: 130px;">Crispy flattened bread dough spread with a savory mixture of marinara sauce topped with Chicken tikka and cheese along with oregano and chili flakes.</h5>
+                    <div class="rating" style="margin-left: 130px;">
+                              <span class="fa fa-star checked"></span>
+                              <span class="fa fa-star checked"></span>
+                              <span class="fa fa-star checked"></span>
+                              <span class="fa fa-star "></span>
+                              <span class="fa fa-star "></span>
+                          </div>
+                    <div class="shop-item-details">
+                        <span class="shop-item-price">₹ 310</span> 
+                        <button class="btn btn-primary shop-item-button" type="button">ADD TO CART</button>
+                    </div>
+                </div>
+                
+                <div class="shop-item">
+                    <span class="shop-item-title">Butter Chicken Pizza </span>
+                    <img class="shop-item-image" src="http://media.foodnetwork.ca/recipetracker/dmm/B/U/Butter_Chicken_Pizza_001.jpg" width="100px">
+                    <h5 style="margin-left: 130px;">Loaded with butter chicken and cheese. </h5>
+                    <div class="rating" style="margin-left: 130px;">
+                              <span class="fa fa-star checked"></span>
+                              <span class="fa fa-star checked"></span>
+                              <span class="fa fa-star checked"></span>
+                              <span class="fa fa-star  checked"></span>
+                              <span class="fa fa-star  checked"></span>
+                          </div>
+                    <div class="shop-item-details">
+                        <span class="shop-item-price">₹ 335</span> 
+                        <button class="btn btn-primary shop-item-button" type="button">ADD TO CART</button>
+                    </div>
+                </div>
+            </div>
+        </section><br>
+        <section class="container1 content-section">
+            <h2 class="section-header" id = "combo">Pasta</h2>
+            <div class="shop-items">
+                <div class="shop-item">
+                    <span class="shop-item-title">Arrabiata Red Sauce Pasta</span>
+                    <img class="shop-item-image" src="https://keyassets-p2.timeincuk.net/wp/prod/wp-content/uploads/sites/63/2013/10/Penne-pasta-arrabiatta.jpg"  width="100px">
+                    <h5 style="margin-left: 130px;">Creamy red sauce seasoned Italian style with garlic, basil and oregano.</h5>
+                    <div class="rating" style="margin-left: 130px;">
+                              <span class="fa fa-star checked"></span>
+                              <span class="fa fa-star checked"></span>
+                              <span class="fa fa-star checked"></span>
+                              <span class="fa fa-star  checked"></span>
+                              <span class="fa fa-star  "></span>
+                          </div>
+                    <div class="shop-item-details">
+                        <span class="shop-item-price">₹ 230</span>
+                        <button class="btn btn-primary shop-item-button" type="button">ADD TO CART</button>
+                    </div>
+                </div>
+                    <div class="shop-item">
+                        <span class="shop-item-title"> Veg Sugo Rosa Pasta </span>
+                        <img class="shop-item-image" src="https://5.imimg.com/data5/AF/DD/ZX/SELLER-16017907/rosato-veg-pink-pasta-250x250.png"  width="100px">
+                        <h5 style="margin-left: 130px;">Mixed or pink sauce.</h5>
+                        <div class="rating" style="margin-left: 130px;">
+                                  <span class="fa fa-star checked"></span>
+                                  <span class="fa fa-star checked"></span>
+                                  <span class="fa fa-star checked"></span>
+                                  <span class="fa fa-star checked"></span>
+                                  <span class="fa fa-star "></span>
+                              </div>
+                        <div class="shop-item-details">
+                            <span class="shop-item-price">₹ 230</span> 
+                            <button class="btn btn-primary shop-item-button" type="button">ADD TO CART</button>
+                        </div>
+                    </div>
+                    <div class="shop-item">
+                        <span class="shop-item-title"> Non Veg Sugo Rosa Pasta  </span>
+                        <img class="shop-item-image" src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/24/Penne_all%27arrabbiata.jpg/1200px-Penne_all%27arrabbiata.jpg"  width="100px">
+                        <h5 style="margin-left: 130px;">Mixed or pink sauce.</h5>
+                        <div class="rating" style="margin-left: 130px;">
+                                  <span class="fa fa-star checked"></span>
+                                  <span class="fa fa-star checked"></span>
+                                  <span class="fa fa-star checked"></span>
+                                  <span class="fa fa-star "></span>
+                                  <span class="fa fa-star "></span>
+                              </div>
+                        <div class="shop-item-details">
+                            <span class="shop-item-price">₹ 260</span> 
+                            <button class="btn btn-primary shop-item-button" type="button">ADD TO CART</button>
+                        </div>
+                    </div>
+            </div>
+        </section><br>
+        <section class="container1 content-section">
+            <h2 class="section-header" id = "comb">Burgers</h2>
+            <div class="shop-items">
+                <div class="shop-item">
+                    <span class="shop-item-title">Super Veggie Burger</span>
+                    <img class="shop-item-image" src="https://b.zmtcdn.com/data/dish_photos/efa/430a758563e3eba9bebb5d507c286efa.jpg?fit=around%7C200%3A200&crop=200%3A200%3B%2A%2C%2A">
+                    <h5 style="margin-left: 130px;">Veg patty, cheesy dips, iceberg with sauteed onion.</h5>
+                    <div class="rating" style="margin-left: 130px;">
+                              <span class="fa fa-star checked"></span>
+                              <span class="fa fa-star checked"></span>
+                              <span class="fa fa-star checked"></span>
+                              <span class="fa fa-star  checked"></span>
+                              <span class="fa fa-star  "></span>
+                          </div>
+                    <div class="shop-item-details">
+                        <span class="shop-item-price">₹179</span>
+                        <button class="btn btn-primary shop-item-button" type="button">ADD TO CART</button>
+                    </div>
+                </div>
+                    <div class="shop-item">
+                        <span class="shop-item-title"> Paneer Zinger Burger </span>
+                        <img class="shop-item-image" src="https://cdn.mydukaan.io/app/image/700x700/?url=https://projecteagle.s3.ap-south-1.amazonaws.com/images/30acae9f-770c-4aed-bc11-9ce767fce640.jpg"  width="100px">
+                        <h5 style="margin-left: 130px;">Coated paneer, cheesy dips, iceberg with onion. </h5>
+                        <div class="rating" style="margin-left: 130px;">
+                                  <span class="fa fa-star checked"></span>
+                                  <span class="fa fa-star checked"></span>
+                                  <span class="fa fa-star checked"></span>
+                                  <span class="fa fa-star "></span>
+                                  <span class="fa fa-star "></span>
+                              </div>
+                        <div class="shop-item-details">
+                            <span class="shop-item-price">₹ 203 </span> 
+                            <button class="btn btn-primary shop-item-button" type="button">ADD TO CART</button>
+                        </div>
+                    </div>
+                    <div class="shop-item">
+                        <span class="shop-item-title"> Peri Peri Zinger Burger  </span>
+                        <img class="shop-item-image" src="https://static.toiimg.com/thumb/53352884.cms?width=1200&height=900"  width="100px">
+                        <h5 style="margin-left: 130px;">Coated patty with peri peri flavour, iceberg with onion.</h5>
+                        <div class="rating" style="margin-left: 130px;">
+                                  <span class="fa fa-star checked"></span>
+                                  <span class="fa fa-star checked"></span>
+                                  <span class="fa fa-star checked"></span>
+                                  <span class="fa fa-star checked"></span>
+                                  <span class="fa fa-star "></span>
+                              </div>
+                        <div class="shop-item-details">
+                            <span class="shop-item-price">₹215 </span> 
+                            <button class="btn btn-primary shop-item-button" type="button">ADD TO CART</button>
+                        </div>
+                    </div>
+                    <div class="shop-item">
+                        <span class="shop-item-title"> X Veg Burger </span>
+                        <img class="shop-item-image" src="https://online.kfc.co.in/Content/OnlineOrderingImages/Menu/Items/veg-zinger-burger.jpg?v=15.99"  width="100px">
+                        <h5 style="margin-left: 130px;">Sauteed paneer with chilli gravy, iceberg, onion and capsicum.</h5>
+                        <div class="rating" style="margin-left: 130px;">
+                                  <span class="fa fa-star checked"></span>
+                                  <span class="fa fa-star checked"></span>
+                                  <span class="fa fa-star checked"></span>
+                                  <span class="fa fa-star checked"></span>
+                                  <span class="fa fa-star "></span>
+                              </div>
+                        <div class="shop-item-details">
+                            <span class="shop-item-price">₹215 </span> 
+                            <button class="btn btn-primary shop-item-button" type="button">ADD TO CART</button>
+                        </div>
+                    </div>
+            </div>
+        </section><br>
+    </section> 
+    <section class="container1 content-section">
+        <h2 class="section-header" id = "burgers">Fries</h2>
+        <div class="shop-items">
+            <div class="shop-item">
+                <span class="shop-item-title"> Cheesy Fries</span>
+                <img class="shop-item-image" src="https://curlytales.com/wp-content/uploads/2018/08/37418481_2201048453473484_6044647838934106112_n-770x515-1280x720.jpg"  width="100px">
+                <h5 style="margin-left: 130px;">must try food!!</h5>
+                <div class="rating" style="margin-left: 130px;">
+                          <span class="fa fa-star checked"></span>
+                          <span class="fa fa-star checked"></span>
+                          <span class="fa fa-star checked"></span>
+                          <span class="fa fa-star  checked"></span>
+                          <span class="fa fa-star  "></span>
+                      </div>
+                <div class="shop-item-details">
+                    <span class="shop-item-price">₹167</span>
+                    <button class="btn btn-primary shop-item-button" type="button">ADD TO CART</button>
+                </div>
+            </div>
+                <div class="shop-item">
+                    <span class="shop-item-title">  Tandoori Fries</span>
+                    <img class="shop-item-image" src="https://imgmedia.lbb.in/media/2019/11/5dcc54c2ca3d070ee4f487d9_1573672130895.jpg">
+                    <h5 style="margin-left: 130px;">French fries and tasty vibes</h5>
+                    <div class="rating" style="margin-left: 130px;">
+                              <span class="fa fa-star checked"></span>
+                              <span class="fa fa-star checked"></span>
+                              <span class="fa fa-star checked"></span>
+                              <span class="fa fa-star  "></span>
+                              <span class="fa fa-star  "></span>
+                          </div>
+                    <div class="shop-item-details">
+                        <span class="shop-item-price">₹ 191</span>
+                        <button class="btn btn-primary shop-item-button" type="button">ADD TO CART</button>
+                    </div>
+                </div>
+        </div>
+    </section><br>
+    <section class="container1 content-section">
+        <h2 class="section-header" id = "fries">Garlic Bread</h2>
+        <div class="shop-items">
+            <div class="shop-item">
+                <span class="shop-item-title">Cheesy Garlic Bread</span>
+                <img class="shop-item-image" src="https://recipetineats.com/wp-content/uploads/2019/01/Cheesy-Garlic-Bread_3.jpg"  width="100px">
+                <h5 style="margin-left: 130px;">Nothing beats our garlic bread! Period!</h5>
+                <div class="rating" style="margin-left: 130px;">
+                          <span class="fa fa-star checked"></span>
+                          <span class="fa fa-star checked"></span>
+                          <span class="fa fa-star checked"></span>
+                          <span class="fa fa-star  checked"></span>
+                          <span class="fa fa-star  "></span>
+                      </div>
+                <div class="shop-item-details">
+                    <span class="shop-item-price">₹ 203</span>
+                    <button class="btn btn-primary shop-item-button" type="button">ADD TO CART</button>
+                </div>
+            </div>
+                <div class="shop-item">
+                    <span class="shop-item-title">Chicken and Cheese Garlic Bread </span>
+                    <img class="shop-item-image" src="https://img.buzzfeed.com/video-api-prod/assets/d2051c6c7e714e3d8cd788b5f04f7a18/BFV10794_ChickenParmGarlicBread-ThumbA1080.jpg">
+                    <h5 style="margin-left: 130px;">Garlic bread topped with (Mozzarella cheeese , onion & green chillies ) </h5>
+                    <div class="rating" style="margin-left: 130px;">
+                              <span class="fa fa-star checked"></span>
+                              <span class="fa fa-star checked"></span>
+                              <span class="fa fa-star checked"></span>
+                              <span class="fa fa-star  "></span>
+                              <span class="fa fa-star  "></span>
+                          </div>
+                    <div class="shop-item-details">
+                        <span class="shop-item-price">₹ 251</span>
+                        <button class="btn btn-primary shop-item-button" type="button">ADD TO CART</button>
+                    </div>
+                </div>
+                    <div class="shop-item">
+                        <span class="shop-item-title"> Butter Chicken Garlic Bread </span>
+                        <img class="shop-item-image" src="https://littlespicejar.com/wp-content/uploads/2018/08/Baked-Garlic-Butter-Chicken-with-Mozzarella-9.jpg"  width="100px">
+                        <h5 style="margin-left: 130px;">Garlic bread topped with (Mozzarella cheeese , onion & green chillies )</h5>
+                        <div class="rating" style="margin-left: 130px;">
+                                  <span class="fa fa-star checked"></span>
+                                  <span class="fa fa-star checked"></span>
+                                  <span class="fa fa-star checked"></span>
+                                  <span class="fa fa-star checked "></span>
+                                  <span class="fa fa-star  "></span>
+                              </div>
+                        <div class="shop-item-details">
+                            <span class="shop-item-price">₹ 263</span>
+                            <button class="btn btn-primary shop-item-button" type="button">ADD TO CART</button>
+                        </div>
+                    </div>
+        </div>
+    </section><br>
+    <section class="container1 content-section">
+        <h2 class="section-header" id = "puff">Nachos</h2>
+        <div class="shop-items">
+            <div class="shop-item">
+                <span class="shop-item-title">Mexican Nachos</span>
+                <img class="shop-item-image" src="https://cdn.shortpixel.ai/client/q_glossy,ret_img/https://www.positivenewstrends.com/wp-content/uploads/2019/02/Mexican-Nachos-1-600x474.png"  width="100px">
+                <div class="rating" style="margin-left: 130px;">
+                          <span class="fa fa-star checked"></span>
+                          <span class="fa fa-star checked"></span>
+                          <span class="fa fa-star checked"></span>
+                          <span class="fa fa-star  "></span>
+                          <span class="fa fa-star  "></span>
+                      </div>
+                <div class="shop-item-details">
+                    <span class="shop-item-price">₹ 203</span>
+                    <button class="btn btn-primary shop-item-button" type="button">ADD TO CART</button>
+                </div>
+            </div>  
+            <div class="shop-item">
+                <span class="shop-item-title">Baked Cheesy Nachos</span>
+                <img class="shop-item-image" src="https://images.indianexpress.com/2020/05/nachos-759.jpg"  width="100px">
+                <div class="rating" style="margin-left: 130px;">
+                          <span class="fa fa-star checked"></span>
+                          <span class="fa fa-star checked"></span>
+                          <span class="fa fa-star checked"></span>
+                          <span class="fa fa-star  checked"></span>
+                          <span class="fa fa-star  "></span>
+                      </div>
+                <div class="shop-item-details">
+                    <span class="shop-item-price">₹ 215</span>
+                    <button class="btn btn-primary shop-item-button" type="button">ADD TO CART</button>
+                </div>
+            </div>  
+            <div class="shop-item">
+                <span class="shop-item-title">Baked Chicken and Cheese Nachos</span>
+                <img class="shop-item-image" src="https://cdn.apartmenttherapy.info/image/upload/v1572032886/k/Photo/Recipes/2019-11-recipe-easy-sheet-pan-nachos/2019-10-21_Kitchn89063_Easy-Sheet-Pan-Chicken-Nachos.jpg"  width="100px">
+                <div class="rating" style="margin-left: 130px;">
+                          <span class="fa fa-star checked"></span>
+                          <span class="fa fa-star checked"></span>
+                          <span class="fa fa-star checked"></span>
+                          <span class="fa fa-star  checked"></span>
+                          <span class="fa fa-star  "></span>
+                      </div>
+                <div class="shop-item-details">
+                    <span class="shop-item-price">₹ 263</span>
+                    <button class="btn btn-primary shop-item-button" type="button">ADD TO CART</button>
+                </div>
+            </div>  
+        </div>
+    </section><br>
+    <section class="container1 content-section">
+        <h2 class="section-header" id = "flurry">Waffle</h2>
+        <div class="shop-items">
+            <div class="shop-item">
+                <span class="shop-item-title">Choco Fudge Waffle</span>
+                <img class="shop-item-image" src="https://b.zmtcdn.com/data/dish_photos/b00/48dc49a3eecc69462f3177dedc88cb00.jpg?fit=around|130:130&crop=130:130;*,*">
+                <h5 style="margin-left: 130px;">Classic crispy waffle with a scoop of Chocolate ice cream topped with chocolate fudge. A dreamy combination!.</h5>
+                <div class="rating" style="margin-left: 130px;">
+                          <span class="fa fa-star checked"></span>
+                          <span class="fa fa-star checked"></span>
+                          <span class="fa fa-star checked"></span>
+                          <span class="fa fa-star  checked"></span>
+                          <span class="fa fa-star  "></span>
+                      </div>
+                <div class="shop-item-details">
+                    <span class="shop-item-price">₹ 227</span>
+                    <button class="btn btn-primary shop-item-button" type="button">ADD TO CART</button>
+                </div>
+            </div>  
+                <div class="shop-item">
+                    <span class="shop-item-title">  Nutella Waffle</span>
+                    <img class="shop-item-image" src="https://s3-ap-south-1.amazonaws.com/betterbutterbucket-silver/anjali-kataria20180804211954587.jpeg">
+                    <h5 style="margin-left: 130px;">Classic crispy waffle and premium European chocolate hazelnut spread. A universal favorite!</h5>
+                    <div class="rating" style="margin-left: 130px;">
+                              <span class="fa fa-star checked"></span>
+                              <span class="fa fa-star checked"></span>
+                              <span class="fa fa-star checked"></span>
+                              <span class="fa fa-star  checked"></span>
+                              <span class="fa fa-star  "></span>
+                          </div>
+                    <div class="shop-item-details">
+                        <span class="shop-item-price">₹ 239</span>
+                        <button class="btn btn-primary shop-item-button" type="button">ADD TO CART</button>
+                    </div>
+                </div>  
+        </div>
+    </section><br>
+    <section class="container1 content-section">
+        <h2 class="section-header" id = "soft">Shakes</h2>
+        <div class="shop-items">
+            <div class="shop-item">
+                <span class="shop-item-title">Strawberry Shake</span>
+                <img class="shop-item-image" src="https://hungrito.com/wp-content/uploads/2017/09/unnamed-240x300.jpg">
+                <h5 style="margin-left: 130px;"> Not to mix things up , experience both the strawberry and chocolate in one sip   </h5>
+                <div class="rating" style="margin-left: 130px;">
+                          <span class="fa fa-star checked"></span>
+                          <span class="fa fa-star checked"></span>
+                          <span class="fa fa-star checked"></span>
+                          <span class="fa fa-star  checked"></span>
+                          <span class="fa fa-star  "></span>
+                      </div>
+                <div class="shop-item-details">
+                    <span class="shop-item-price">₹203</span>
+                    <button class="btn btn-primary shop-item-button" type="button">ADD TO CART</button>
+                </div>
+            </div>  
+                <div class="shop-item">
+                    <span class="shop-item-title">Chocolate Shake</span>
+                    <img class="shop-item-image" src="http://lh3.googleusercontent.com/pXzaOWfhP2P2nVBTFLU5GDAl5cFpJNemcxCq3iRIUuuZrRqE9nhZra1uyyzDHM5qD_vGFQ9FA7gr44bjfFBOT6K91BH0=s650">
+                    <h5 style="margin-left: 130px;">A perfect Blend of chocolate and banana for quick delicious filling</h5>
+                    <div class="rating" style="margin-left: 130px;">
+                              <span class="fa fa-star checked"></span>
+                              <span class="fa fa-star checked"></span>
+                              <span class="fa fa-star checked"></span>
+                              <span class="fa fa-star checked "></span>
+                              <span class="fa fa-star checked "></span>
+                          </div>
+                    <div class="shop-item-details">
+                        <span class="shop-item-price">₹ 203</span>
+                        <button class="btn btn-primary shop-item-button" type="button">ADD TO CART</button>
+                    </div>
+                </div>  
+                    <div class="shop-item">
+                        <span class="shop-item-title">Oreo Shake</span>
+                        <img class="shop-item-image" src="https://www.whiskaffair.com/wp-content/uploads/2019/04/Oreo-Milkshake-1-3.jpg">
+                        <h5 style="margin-left: 130px;">A sinful shake made with authentic oero cookies and top with whipped cream</h5>
+                        <div class="rating" style="margin-left: 130px;">
+                                  <span class="fa fa-star checked"></span>
+                                  <span class="fa fa-star checked"></span>
+                                  <span class="fa fa-star checked"></span>
+                                  <span class="fa fa-star  checked"></span>
+                                  <span class="fa fa-star  "></span>
+                              </div>
+                        <div class="shop-item-details">
+                            <span class="shop-item-price">₹203 </span>
+                            <button class="btn btn-primary shop-item-button" type="button">ADD TO CART</button>
+                        </div>
+                    </div>  
+        </div>
+    </section><br>
+    <section class="container1 content-section">
+        <h2 class="section-header" id = "hot">Coolers</h2>
+        <div class="shop-items">
+            <div class="shop-item">
+                <span class="shop-item-title">Lemon Iced Tea</span>
+                <img class="shop-item-image" src="https://www.errenskitchen.com/wp-content/uploads/2014/08/lemon-Iced-Tea.jpg">
+                <div class="rating" style="margin-left: 130px;">
+                          <span class="fa fa-star checked"></span>
+                          <span class="fa fa-star checked"></span>
+                          <span class="fa fa-star checked"></span>
+                          <span class="fa fa-star checked "></span>
+                          <span class="fa fa-star  "></span>
+                      </div>
+                <div class="shop-item-details">
+                    <span class="shop-item-price">₹ 179</span>
+                    <button class="btn btn-primary shop-item-button" type="button">ADD TO CART</button>
+                </div>
+            </div> 
+            <div class="shop-item">
+                <span class="shop-item-title"> Peach Iced Tea</span>
+                <img class="shop-item-image" src="https://img.buzzfeed.com/video-api-prod/assets/d1233b91a3964995a65989f3d3e30633/Thumb_A_FB.jpg">
+                <div class="rating" style="margin-left: 130px;">
+                          <span class="fa fa-star checked"></span>
+                          <span class="fa fa-star checked"></span>
+                          <span class="fa fa-star checked"></span>
+                          <span class="fa fa-star  "></span>
+                          <span class="fa fa-star  "></span>
+                      </div>
+                <div class="shop-item-details">
+                    <span class="shop-item-price">₹ 179</span>
+                    <button class="btn btn-primary shop-item-button" type="button">ADD TO CART</button>
+                </div>
+            </div>  
+            <div class="shop-item">
+                <span class="shop-item-title">   Cucumber Mint</span>
+                <img class="shop-item-image" src="https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fimages.media-allrecipes.com%2Fuserphotos%2F5515617.jpg">
+                <div class="rating" style="margin-left: 130px;">
+                          <span class="fa fa-star checked"></span>
+                          <span class="fa fa-star checked"></span>
+                          <span class="fa fa-star checked"></span>
+                          <span class="fa fa-star checked "></span>
+                          <span class="fa fa-star  "></span>
+                      </div>
+                <div class="shop-item-details">
+                    <span class="shop-item-price">₹ 179</span>
+                    <button class="btn btn-primary shop-item-button" type="button">ADD TO CART</button>
+                </div>
+            </div>  
+        </div>
+    </section><br>
+
+        <section class="container3 content-section">
+            <h2 class="section-header">CART</h2>
+            <div class="cart-row">
+                <span class="cart-item cart-header cart-column">ITEM</span>
+                <span class="cart-price cart-header cart-column">PRICE</span>
+                <span class="cart-quantity cart-header cart-column">QUANTITY</span>
+            </div>
+            <div class="cart-items">
+            </div>
+            <div class="cart-total">
+                <strong class="cart-total-title">Total</strong>
+                <span class="cart-total-price">₹ 0</span>
+            </div>
+            <a href="payment.html"><button class="btn btn-primary btn-purchase" type="button">PURCHASE</button></a>
+        </section>
+
+
+        <script>
+            if (document.readyState == 'loading') {
+    document.addEventListener('DOMContentLoaded', ready)
+} else {
+    ready()
+}
+
+function ready() {
+    var removeCartItemButtons = document.getElementsByClassName('btn-danger')
+    for (var i = 0; i < removeCartItemButtons.length; i++) {
+        var button = removeCartItemButtons[i]
+        button.addEventListener('click', removeCartItem)
+    }
+
+    var quantityInputs = document.getElementsByClassName('cart-quantity-input')
+    for (var i = 0; i < quantityInputs.length; i++) {
+        var input = quantityInputs[i]
+        input.addEventListener('change', quantityChanged)
+    }
+
+    var addToCartButtons = document.getElementsByClassName('shop-item-button')
+    for (var i = 0; i < addToCartButtons.length; i++) {
+        var button = addToCartButtons[i]
+        button.addEventListener('click', addToCartClicked)
+    }
+
+    document.getElementsByClassName('btn-purchase')[0].addEventListener('click', purchaseClicked)
+}
+
+function purchaseClicked() {
+    alert('Thank you for your purchase')
+    var cartItems = document.getElementsByClassName('cart-items')[0]
+    while (cartItems.hasChildNodes()) {
+        cartItems.removeChild(cartItems.firstChild)
+    }
+    updateCartTotal()
+}
+
+function removeCartItem(event) {
+    var buttonClicked = event.target
+    buttonClicked.parentElement.parentElement.remove()
+    updateCartTotal()
+}
+
+function quantityChanged(event) {
+    var input = event.target
+    if (isNaN(input.value) || input.value <= 0) {
+        input.value = 1
+    }
+    updateCartTotal()
+}
+
+function addToCartClicked(event) {
+    var button = event.target
+    var shopItem = button.parentElement.parentElement
+    var title = shopItem.getElementsByClassName('shop-item-title')[0].innerText
+    var price = shopItem.getElementsByClassName('shop-item-price')[0].innerText
+    var imageSrc = shopItem.getElementsByClassName('shop-item-image')[0].src
+    addItemToCart(title, price, imageSrc)
+    updateCartTotal()
+}
+
+function addItemToCart(title, price, imageSrc) {
+    var cartRow = document.createElement('div')
+    cartRow.classList.add('cart-row')
+    var cartItems = document.getElementsByClassName('cart-items')[0]
+    var cartItemNames = cartItems.getElementsByClassName('cart-item-title')
+    for (var i = 0; i < cartItemNames.length; i++) {
+        if (cartItemNames[i].innerText == title) {
+            alert('This item is already added to the cart')
+            return
+        }
+    }
+    var cartRowContents = `
+        <div class="cart-item cart-column">
+            <img class="cart-item-image" src="${imageSrc}" width="100" height="100">
+            <span class="cart-item-title">${title}</span>
+        </div>
+        <span class="cart-price cart-column">${price}</span>
+        <div class="cart-quantity cart-column">
+            <input class="cart-quantity-input" type="number" value="1">
+            <button class="btn btn-danger" type="button">REMOVE</button>
+        </div>`
+    cartRow.innerHTML = cartRowContents
+    cartItems.append(cartRow)
+    cartRow.getElementsByClassName('btn-danger')[0].addEventListener('click', removeCartItem)
+    cartRow.getElementsByClassName('cart-quantity-input')[0].addEventListener('change', quantityChanged)
+}
+
+function updateCartTotal() {
+    var cartItemContainer = document.getElementsByClassName('cart-items')[0]
+    var cartRows = cartItemContainer.getElementsByClassName('cart-row')
+    var total = 0
+    for (var i = 0; i < cartRows.length; i++) {
+        var cartRow = cartRows[i]
+        var priceElement = cartRow.getElementsByClassName('cart-price')[0]
+        var quantityElement = cartRow.getElementsByClassName('cart-quantity-input')[0]
+        var price = parseFloat(priceElement.innerText.replace('₹', ''))
+        var quantity = quantityElement.value
+        total = total + (price * quantity)
+    }
+    total = Math.round(total * 100) / 100
+    document.getElementsByClassName('cart-total-price')[0].innerText = '₹' + total
+}
+        </script>
+      
+
+      </div>
+   </div>  
+</body>
+</html>

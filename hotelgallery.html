@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="nav.css">
+    <link rel="stylesheet" href="fotter.css">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&family=MonteCarlo&family=WindSong:wght@500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="search.css">
+    <script src="nav.js" defer></script>
+    <title>Our hotels</title>
+    
+
+    <style>
+        body {
+  font-family: arial, sans-serif;
+}
+
+.container {
+  max-width: 1125px;
+  margin: 0 auto;
+}
+
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  border-radius: 20px;
+}
+
+.gallery-item {
+  width: 330px;
+  height: 265px;
+  margin: 10px;
+  text-decoration: none;
+}
+
+.wrapper{
+  max-width: 450px;
+  margin: 10px auto ;
+  /* margin-left: 500px; */
+}
+
+.gallery-item img {
+  position: absolute;
+  width: 330px;
+  height: 265px;
+}
+.title1{
+  font-family: 'Dancing Script', cursive;
+  text-align: center;
+  font-size: 300%;
+}
+.text-wrapper {
+  position: relative;
+  width: 330px;
+  height: 265px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  color: #fff;
+  opacity: 0;
+}
+
+.text-wrapper:hover {
+  transition: all 0.8s ease;
+  background: rgba(0, 0, 0, 0.6);
+  opacity: 1;
+}
+
+.name {
+  font-size: 1.5em;
+}
+.checked {
+     color: orange;
+    }
+ .rating{
+  margin-left: 0px;
+ }
+/* Because there is no hover on a touch devide, we need to move the text to the bottom of the image and display it by default */
+
+@media only screen and (max-width: 1024px) {
+  .text-wrapper {
+    opacity: 1;
+    justify-content: flex-end;
+    text-shadow: 1px 1px 1px #000;
+  }
+  .title {
+    margin-bottom: 1em;
+  }
+}
+    </style>
+</head>
+<body>
+  <nav class="navbar" >
+    <div class="log">
+    <img src="logo_foodlance.jpg" alt="Logo">
+</div>
+    <a href="#" class="toggle-button">
+      <span class="bar"></span>
+      <span class="bar"></span>
+      <span class="bar"></span>
+    </a>
+    <div class="navbar-links">
+      <ul>
+        <li><a href="home.html">Home</a></li>
+        <li><a href="about.html" target="_blank">About Us</a></li>
+    </div>
+  </nav>
+          <h1 class="title1">OUR HOTELS.....</h1>
+
+          <div class="wrapper" >
+            <div class="search-input">
+              <a href="" target="_blank" hidden></a>
+              <input type="text" placeholder="search hotels..">
+              <div class="autocom-box">
+                <!-- here list are inserted from javascript -->
+              </div>
+              <div class="icon"><i class="fas fa-search"></i></div>
+            </div>
+          </div>
+           <script >
+               let suggestions = [
+          "pizzahut",
+          "nik bakers",
+          "mcdonalds",
+          "dominos",
+          "kfc",
+          "kanta churi",
+          "burger king",
+          "xero",
+      ];
+      
+      // getting all required elements
+      const searchWrapper = document.querySelector(".search-input");
+      const inputBox = searchWrapper.querySelector("input");
+      const suggBox = searchWrapper.querySelector(".autocom-box");
+      const icon = searchWrapper.querySelector(".icon");
+      let linkTag = searchWrapper.querySelector("a");
+      let webLink;
+      
+      // if user press any key and release
+      inputBox.onkeyup = (e)=>{
+          let userData = e.target.value; //user enetered data
+          let emptyArray = [];
+          if(userData){
+              icon.onclick = ()=>{
+                 // webLink = `https://www.google.com/search?q=${userData}`;
+                //  webLink = `${userData}.html`
+                //  linkTag.setAttribute("href", webLink);
+               //   linkTag.click();
+                window.location.href = `${userData}.html` ;
+              }
+              emptyArray = suggestions.filter((data)=>{
+                  //filtering array value and user characters to lowercase and return only those words which are start with user enetered chars
+                  return data.toLocaleLowerCase().startsWith(userData.toLocaleLowerCase());
+              });
+              emptyArray = emptyArray.map((data)=>{
+                  // passing return data inside li tag
+                  return data = `<li>${data}</li>`;
+              });
+              searchWrapper.classList.add("active"); //show autocomplete box
+              showSuggestions(emptyArray);
+              let allList = suggBox.querySelectorAll("li");
+              for (let i = 0; i < allList.length; i++) {
+                  //adding onclick attribute in all li tag
+                  allList[i].setAttribute("onclick", "select(this)");
+              }
+          }else{
+              searchWrapper.classList.remove("active"); //hide autocomplete box
+          }
+      }
+      
+      function select(element){
+          let selectData = element.textContent;
+          inputBox.value = selectData;
+          icon.onclick = ()=>{
+             // webLink = `https://www.google.com/search?q=${selectData}`;
+            // webLink = `${userData}.html`;
+            //  linkTag.setAttribute("href", webLink);
+            //  linkTag.click();
+            window.location.href = `${selectData}.html` ;
+          }
+          searchWrapper.classList.remove("active");
+      }
+      
+      function showSuggestions(list){
+          let listData;
+          if(!list.length){
+              userValue = inputBox.value;
+              listData = `<li>${userValue}</li>`;
+          }else{
+            listData = list.join('');
+          }
+          suggBox.innerHTML = listData;
+      }
+      
+           </script> 
+
+    <div class="container">
+  
+        <div class="gallery">
+          <a class="gallery-item" href="mcdonalds.html"><img src="https://m.economictimes.com/thumb/msid-71699011,width-1200,height-900,resizemode-4,imgsize-250370/mcd-bccl.jpg"><span class="text-wrapper"><span class="name">McDonalds</span><span class="title">
+            <div>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star "></span>
+        </div></span></span></a>
+      
+
+          <a class="gallery-item" href="dominos.html"><img src="https://3u8dbs16f2emlqxkbc8tbvgf-wpengine.netdna-ssl.com/wp-content/uploads/2020/04/Dominos-scaled.jpg" alt="Headshot of John Adams"><span class="text-wrapper"><span class="name">Domino's</span><span class="title">
+            <div>
+              <span class="fa fa-star checked"></span>
+              <span class="fa fa-star checked"></span>
+              <span class="fa fa-star checked"></span>
+              <span class="fa fa-star checked"></span>
+              <span class="fa fa-star checked"></span>
+          </div>
+          </span></span></a>
+          
+          <a class="gallery-item" href="burger king.html"><img src="https://thumbor.forbes.com/thumbor/fit-in/1200x0/filters%3Aformat%28jpg%29/https%3A%2F%2Fspecials-images.forbesimg.com%2Fdam%2Fimageserve%2F1058912512%2F0x0.jpg%3Ffit%3Dscale"><span class="text-wrapper"><span class="name">Burger King</span><span class="title">
+            <div>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+        </div></span></span></a>
+            
+          <a class="gallery-item" href="kfc.html"><img src="https://vir.com.vn/stores/news_dataimages/hung/012013/11/15/kfc.jpg" alt="Headshot of James Madison"><span class="text-wrapper"><span class="name">KFC</span><span class="title">
+            <div>
+              <span class="fa fa-star checked"></span>
+              <span class="fa fa-star checked"></span>
+              <span class="fa fa-star checked"></span>
+              <span class="fa fa-star checked"></span>
+              <span class="fa fa-star "></span>
+          </div>
+          </span></span></a>
+      
+          <a class="gallery-item" href="pizzahut.html"><img src="https://insideretail.asia/wp-content/uploads/2020/09/pizzahut1.jpg" alt="Headshot of James Monroe"><span class="text-wrapper"><span class="name">Pizza Hut</span><span class="title">
+            <div>
+              <span class="fa fa-star checked"></span>
+              <span class="fa fa-star checked"></span>
+              <span class="fa fa-star checked"></span>
+              <span class="fa fa-star checked"></span>
+              <span class="fa fa-star "></span>
+          </div>
+          </span></span></a>
+      
+          <a class="gallery-item" href="nik bakers.html"><img src="https://webtafri.com/wp-content/uploads/2018/01/Nik-Bakers.jpg" alt="Headshot of Andrew Jackson"><span class="text-wrapper"><span class="name">Nik Baker's</span><span class="title">
+            <div>
+              <span class="fa fa-star checked"></span>
+              <span class="fa fa-star checked"></span>
+              <span class="fa fa-star checked"></span>
+              <span class="fa fa-star checked"></span>
+              <span class="fa fa-star checked"></span>
+          </div>
+          </span></span></a>
+      
+          <a class="gallery-item" href="xero.html"><img src="https://b.zmtcdn.com/data/pictures/5/19306745/4daccaf7e8ff3caed04d3420f28b5d10.jpg" alt="Headshot of John Tyler"><span class="text-wrapper"><span class="name">Xero Degree</span><span class="title">
+            <div>
+              <span class="fa fa-star checked"></span>
+              <span class="fa fa-star checked"></span>
+              <span class="fa fa-star checked"></span>
+              <span class="fa fa-star "></span>
+              <span class="fa fa-star "></span>
+          </div>
+          </span></span></a>
+      
+          <a class="gallery-item" href="kanta churi.html"><img src="https://lh5.googleusercontent.com/p/AF1QipPo3YoGlk7zUMcsqp_khFy4LT2RmE4RzsU_5F6r=w1080-k-no" alt="Headshot of James Polk"><span class="text-wrapper"><span class="name">Kanta Churi</span><span class="title">
+            <div>
+              <span class="fa fa-star checked"></span>
+              <span class="fa fa-star checked"></span>
+              <span class="fa fa-star checked"></span>
+              <span class="fa fa-star "></span>
+              <span class="fa fa-star "></span>
+          </div>
+          </span></span></a>
+      
+      
+        </div>
+        
+      </div> 
+
+      <footer class="footer-distributed">
+
+        <div class="footer-left">
+      
+          <h3>FOODLANCE<span> &nbsp;&nbsp;<img src="logo_foodlance.jpg" alt="logo" height="50px"></span></h3>
+      
+          <p class="footer-links">
+            <a href="#">Home</a>
+            ·
+            <a href="#">Services</a>
+            ·
+            <a href="#">gallery</a>
+            ·
+            <a href="#">Contact</a>
+          </p>
+        
+        <div class="footer-icons">
+      
+          <a href="#"><i class="fa fa-facebook"></i></a>
+          <a href="#"><i class="fa fa-twitter"></i></a>
+          <a href="#"><i class="fa fa-linkedin"></i></a>
+          <a href="#"><i class="fa fa-instagram"></i></a>
+        </div>
+        </div>
+      
+      
+        <div class="footer-right">
+      
+          <p>Leave Your Comment</p>
+      
+          <form action="#">
+      
+            <input type="text" name="email" placeholder="Email">
+            <textarea name="message" placeholder="Message"></textarea>
+            <button>Send</button>
+      
+          </form>
+      
+        </div>
+      
+      </footer>
+
+</body>
+</html>

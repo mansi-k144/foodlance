@@ -1,0 +1,921 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <script src="store.js" async></script>
+    <title>Kanta Chhuri</title>
+
+    <style>
+        .gal{
+            height: 200px;
+            margin-left: 100px;
+            display: inline-flex;
+        }
+        .imagepad{
+            padding: 5px;
+        }
+        .name{
+            text-align: center;
+            text-decoration: wavy;
+        }
+
+
+#cards_landscape_wrap-2{
+  text-align: center;
+  background: #F7F7F7;
+}
+#cards_landscape_wrap-2 .container{
+  padding-top: 5px;
+}
+#cards_landscape_wrap-2 a{
+  text-decoration: none;
+  outline: none;
+}
+#cards_landscape_wrap-2 .card-flyer {
+  border-radius: 5px;
+}
+#cards_landscape_wrap-2 .card-flyer .image-box{
+  background: #ffffff;
+  overflow: hidden;
+  box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.50);
+  border-radius: 5px;
+}
+#cards_landscape_wrap-2 .card-flyer .image-box img{
+  width: 100%;
+  height: 300px;
+}
+#cards_landscape_wrap-2 .card-flyer:hover .image-box img{
+  opacity: 0.7;
+  -webkit-transform:scale(1.15);
+  -moz-transform:scale(1.15);
+  -ms-transform:scale(1.15);
+  -o-transform:scale(1.15);
+  transform:scale(1.15);
+}
+#cards_landscape_wrap-2 .card-flyer .text-box{
+  text-align: center;
+}
+#cards_landscape_wrap-2 .card-flyer .text-box .text-container{
+  padding: 30px 18px;
+}
+#cards_landscape_wrap-2 .card-flyer{
+  background: #FFFFFF;
+  margin-top: 50px;
+  -webkit-transition: all 0.2s ease-in;
+  -moz-transition: all 0.2s ease-in;
+  -ms-transition: all 0.2s ease-in;
+  -o-transition: all 0.2s ease-in;
+  transition: all 0.2s ease-in;
+  box-shadow: 0px 3px 4px rgba(0, 0, 0, 0.40);
+}
+#cards_landscape_wrap-2 .card-flyer:hover{
+  background: #fff;
+  box-shadow: 0px 15px 26px rgba(0, 0, 0, 0.50);
+  -webkit-transition: all 0.2s ease-in;
+  -moz-transition: all 0.2s ease-in;
+  -ms-transition: all 0.2s ease-in;
+  -o-transition: all 0.2s ease-in;
+  transition: all 0.2s ease-in;
+  margin-top: 50px;
+}
+#cards_landscape_wrap-2 .card-flyer .text-box p{
+  margin-top: 10px;
+  margin-bottom: 0px;
+  padding-bottom: 0px; 
+  font-size: 14px;
+  letter-spacing: 1px;
+  color: #000000;
+}
+#cards_landscape_wrap-2 .card-flyer .text-box h6{
+  margin-top: 0px;
+  margin-bottom: 4px; 
+  font-size: 28px;
+  font-weight: bold;
+  font-family: 'Roboto Black', sans-serif;
+  letter-spacing: 1px;
+  color: rgb(255, 174, 0);
+}
+
+ @media screen and (max-width: 800px){
+            .gal{
+                height: 150px;
+                width:80%;
+                overflow-x: hidden  !important;
+            }
+ }
+
+        .container2 {
+            background-color: rgb(253, 253, 255);
+            height:max-content ; 
+            width: 200px;
+            padding: 10px;
+            text-align: left;
+            margin-left: 100px;
+            grid-area: container2;
+            grid-template-columns: 180px;
+            border: 1px solid rgb(2, 2, 2);
+            border-radius: 10%;
+            position: sticky;
+            top: 10px;
+        }
+        .menuTiles {  
+            display: flex;       
+            grid-area: menuTiles;
+            margin-left: 0px;
+            display: grid;
+            grid-template-areas: 
+             'main-container container3';
+        }
+        
+
+        .menuBar {
+            display: flex;
+            margin-top: 50px;
+            display: grid;
+            grid-template-columns: 350px;
+            grid-template-areas: 
+            'container2 menuTiles ';
+        }
+
+        .Menu{
+            font-weight: bolder;
+            font-size: 30px;
+            text-align: left;
+            color: rgb(77, 4, 4);
+        }
+        .menubtn {
+            text-align: left;
+            border: none;
+            padding: 10px;
+            width: 160px; 
+            color: black;
+          /* text-decoration: none;       */
+        }
+        
+        .col{
+            color: black;
+            text-decoration: none;
+        }
+
+        .menu {
+            
+            position: relative;
+            display: inline-block;
+        }
+        .menuItem {
+            padding: 0px 10px;
+            display: none;
+            position: absolute;
+            min-width: 160px;
+            z-index: 1;
+        }
+        .menuItem .a{
+            display: block;
+            text-decoration: none;
+            float: none;
+        }
+        .menu:hover {
+            height: 80px;
+        }
+        .menu:hover .menuItem {
+            display: block;
+        }
+        .dishes {
+            border: 1px solid lightslategrey;
+            margin-left: -150px;
+            padding: 16px;
+            border-radius: 10px;
+            background-color: lightyellow;
+            grid-area: dishes;
+            width: 600px;
+        }
+        
+        .imageDish {
+            margin-left: 15px;
+            width: 160px;
+            grid-area: imageDish;
+        }
+        .item {
+            grid-area: item;
+        }
+        .checked {
+             color: orange;
+            }
+        .rate {
+            color: rgb(37, 37, 36) ;
+            grid-area: rate;
+        }
+        .cart {
+            grid-area: cart;
+            border: 1px solid burlywood;
+        }
+        
+        .order {
+            grid-area: order;
+            border: 1px solid burlywood;
+        }
+        .rating {
+            grid-area: rating;
+            margin-left: 0px;
+        }
+
+        .dishes{
+            display: grid;
+            grid-template-areas:
+            "item item imageDish imageDish"
+            "rating rating imageDish imageDish"
+            "rate rate cart order" ;
+            margin-bottom: 20px;
+        }
+        @media screen and (max-width :768px){
+  .container2{
+    position: static;
+    height:max-content ; 
+    width: 150px;
+    margin-left: 3px;
+    float: left;
+  }
+
+  .shop-item{
+      width: 300px;
+  }
+  .menuTiles{
+    margin-left: 120px;
+     position:absolute;
+     width: 10px;
+  }
+.container3{
+    display: none;
+}
+        }      
+  
+       
+ 
+    </style>
+</head>
+<body>
+    <div id="cards_landscape_wrap-2">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
+                    <a href="">
+                        <div class="card-flyer">
+                            <div class="text-box">
+                                <div class="image-box">
+                                    <img src="https://b.zmtcdn.com/data/pictures/0/18899400/d63e1986ee48c1e4a2a0d837d73d20e6_featured_v2.jpg" alt="" style="object-fit: cover;" >
+                                </div>
+                                <div class="text-container">
+                                    <h6>Kanta Chhuri</h6>
+                                    <p>North Indian, South Indian, Chinese, Fast Food, Beverages</p>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+             </div>
+        </div>
+    </div>
+                
+    <br> <br> 
+
+    <div class="gal">
+        <img class="imagepad" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQpYEqTqPs8hyeUkZ1faQa3-gAHnZmQaXTHxA&usqp=CAU" alt="">
+        <img class="imagepad" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRQgFzLZXDFlcY6r-V5RU66qK1A74G3IkeLvQ&usqp=CAU" alt="">
+        <img class="imagepad" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRCU4ASsAnlDQkAW2ftl-MbbTjQoJR8GU8vaA&usqp=CAU" alt="">
+        <img class="imagepad" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR5LuZkLlLNWYfF3UdyRLPCHefY9PqgQwtx0Q&usqp=CAU" alt="">
+        <img class="imagepad" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTCGBi4Xzd9cNecBpvb56I1oPaZZ3Aw9dnnaA&usqp=CAU" alt="">
+            </div>
+    
+    <div class="menuBar">
+      <div class="container2">
+             <div class="Menu" >Menu</div><hr>
+             <div class="menu">
+                  <a href="#happy" class="menubtn">Combos<i class="fa fa-caret-down"></i></a>
+                   <div class="menuItem">
+                        <a class="col" href="#happy">Special Combos</a> <br>
+                       <a class="col" href="#combo">Thali</a> 
+                   </div>
+              </div> <hr>
+              <div class="menu">
+                  <a href="#burgers" class="menubtn">Quick Bites<i class="fa fa-caret-down"></i></a>
+                   <div class="menuItem">
+                        <a class="col" href="#burgers">Pasta</a> <br>
+                       <a class="col" href="#fries">Burgers</a> <br>
+                       <a class="col" href="#puff">Sandwiches</a> <br>
+                   </div>
+              </div> <br> <hr>
+              <div class="menu">
+                  <a href="#flurry" class="menubtn">South Indian <i class="fa fa-caret-down"></i></a>
+                   <div class="menuItem">
+                        <a class="col" href="#flurry">Uttapam</a> <br>
+                       <a class="col" href="#serve">Dosa</a> <br>
+                        <a class="col" href="#pud">Vada</a> <br>
+                   </div>
+              </div> <br> <hr>
+
+              <div class="menu">
+                <a href="#soft" class="menubtn">Beverages <i class="fa fa-caret-down"></i></a>
+                 <div class="menuItem">
+                     <a class="col" href="#soft">Soups</a> <br>
+                 </div>
+            </div>  <hr>
+      </div>
+       
+      <div class="menuTiles"> 
+      
+        <section class="main-container">
+         <section class="container1 content-section">
+            <h2 class="section-header" id="happy"> Special Combos</h2>
+            <div class="shop-items">
+                <div class="shop-item">
+                    <span class="shop-item-title">Paneer Kulcha with Gravy</span>
+                    <img class="shop-item-image" src="https://b.zmtcdn.com/data/dish_photos/9b7/9e811b9c606d3a7ce31fd965bc2879b7.jpg?fit=around|130:130&crop=130:130;*,*">
+                    <h5 style="margin-left: 130px;">1 Paneer Kulcha with Gravy</h5>
+                    <div class="rating" style="margin-left: 130px;">
+                              <span class="fa fa-star checked"></span>
+                              <span class="fa fa-star checked"></span>
+                              <span class="fa fa-star checked"></span>
+                              <span class="fa fa-star checked"></span>
+                              <span class="fa fa-star "></span>
+                          </div>
+                    <div class="shop-item-details">
+                        <span class="shop-item-price">₹ 140</span> 
+                        <button class="btn btn-primary shop-item-button" type="button">ADD TO CART</button>
+                    </div>
+                </div>
+                <div class="shop-item">
+                    <span class="shop-item-title">Onion Kulcha with Dal Makhani </span>
+                    <img class="shop-item-image" src="https://www.indianhealthyrecipes.com/wp-content/uploads/2020/05/dal-makhani.jpg" width="100px">
+                    <h5 style="margin-left: 130px;">1 Onion Kulcha with Dal Makhani</h5>
+                    <div class="rating" style="margin-left: 130px;">
+                              <span class="fa fa-star checked"></span>
+                              <span class="fa fa-star checked"></span>
+                              <span class="fa fa-star checked"></span>
+                              <span class="fa fa-star checked"></span>
+                              <span class="fa fa-star "></span>
+                          </div>
+                    <div class="shop-item-details">
+                        <span class="shop-item-price">₹ 140</span> 
+                        <button class="btn btn-primary shop-item-button" type="button">ADD TO CART</button>
+                    </div>
+                </div>
+                
+                <div class="shop-item">
+                    <span class="shop-item-title">Stuffed Kulcha with Dal Makhani </span>
+                    <img class="shop-item-image" src="https://media-cdn.tripadvisor.com/media/photo-s/0e/4b/7f/ae/dal-makhani-stuffed-naan.jpg" width="100px">
+                    <h5 style="margin-left: 130px;">1 Stuffed Kulcha with Dal Makhani</h5>
+                    <div class="rating" style="margin-left: 130px;">
+                              <span class="fa fa-star checked"></span>
+                              <span class="fa fa-star checked"></span>
+                              <span class="fa fa-star checked"></span>
+                              <span class="fa fa-star  "></span>
+                              <span class="fa fa-star  "></span>
+                          </div>
+                    <div class="shop-item-details">
+                        <span class="shop-item-price">₹ 140</span> 
+                        <button class="btn btn-primary shop-item-button" type="button">ADD TO CART</button>
+                    </div>
+                </div>
+            </div>
+        </section><br>
+        <section class="container1 content-section">
+            <h2 class="section-header" id = "combo">Thali</h2>
+            <div class="shop-items">
+                <div class="shop-item">
+                    <span class="shop-item-title">Butter Roti Thali</span>
+                    <img class="shop-item-image" src="https://b.zmtcdn.com/data/dish_photos/d9f/5fe91f3c92b65c6d77a49c514b13bd9f.jpg?fit=around|130:130&crop=130:130;*,*">
+                    <h5 style="margin-left: 130px;">2 Butter Roti+Paneer+Dal Makhani+Plain Rice+Raita+Salad+Papad+Sweet</h5>
+                    <div class="rating" style="margin-left: 130px;">
+                              <span class="fa fa-star checked"></span>
+                              <span class="fa fa-star checked"></span>
+                              <span class="fa fa-star checked"></span>
+                              <span class="fa fa-star  checked"></span>
+                              <span class="fa fa-star  "></span>
+                          </div>
+                    <div class="shop-item-details">
+                        <span class="shop-item-price">₹ 180</span>
+                        <button class="btn btn-primary shop-item-button" type="button">ADD TO CART</button>
+                    </div>
+                </div>
+                    <div class="shop-item">
+                        <span class="shop-item-title">Lachha Thali </span>
+                        <img class="shop-item-image" src="https://i.ytimg.com/vi/d4GdyA0rIX0/maxresdefault.jpg" width="100px">
+                        <h5 style="margin-left: 130px;">2 Lachha+Paneer+Dal Makhani+Mix Veg+Plain Rice+Raita+Salad+Papad+Sweet</h5>
+                        <div class="rating" style="margin-left: 130px;">
+                                  <span class="fa fa-star checked"></span>
+                                  <span class="fa fa-star checked"></span>
+                                  <span class="fa fa-star checked"></span>
+                                  <span class="fa fa-star checked"></span>
+                                  <span class="fa fa-star "></span>
+                              </div>
+                        <div class="shop-item-details">
+                            <span class="shop-item-price">₹ 190</span> 
+                            <button class="btn btn-primary shop-item-button" type="button">ADD TO CART</button>
+                        </div>
+                    </div>
+            </div>
+        </section><br>
+    </section> 
+    <section class="container1 content-section">
+        <h2 class="section-header" id = "burgers">Pasta</h2>
+        <div class="shop-items">
+            <div class="shop-item">
+                <span class="shop-item-title">  Red Sauce Pasta</span>
+                <img class="shop-item-image" src="https://b.zmtcdn.com/data/dish_photos/5c1/aa2dbe313333bba12c2f2be6b0a6a5c1.jpg?fit=around|130:130&crop=130:130;*,*">
+                <h5 style="margin-left: 130px;">Delicious red sauce pasta, slow cooked in tangy tomato sauce. Served in a simple, authentic Italian way</h5>
+                <div class="rating" style="margin-left: 130px;">
+                          <span class="fa fa-star checked"></span>
+                          <span class="fa fa-star checked"></span>
+                          <span class="fa fa-star checked"></span>
+                          <span class="fa fa-star  checked"></span>
+                          <span class="fa fa-star  "></span>
+                      </div>
+                <div class="shop-item-details">
+                    <span class="shop-item-price">₹ 220</span>
+                    <button class="btn btn-primary shop-item-button" type="button">ADD TO CART</button>
+                </div>
+            </div>
+            <div class="shop-item">
+                <span class="shop-item-title"> White Sauce Pasta</span>
+                <img class="shop-item-image" src="https://b.zmtcdn.com/data/dish_photos/f1b/77ad387130b7644c34472e8a284cdf1b.jpg?fit=around|130:130&crop=130:130;*,*">
+                <h5 style="margin-left: 130px;">White sauce pasta is a delicious dish made of pasta, butter, milk, cheese & herbs.</h5>
+                <div class="rating" style="margin-left: 130px;">
+                          <span class="fa fa-star checked"></span>
+                          <span class="fa fa-star checked"></span>
+                          <span class="fa fa-star checked"></span>
+                          <span class="fa fa-star "></span>
+                          <span class="fa fa-star  "></span>
+                      </div>
+                <div class="shop-item-details">
+                    <span class="shop-item-price">₹ 220</span>
+                    <button class="btn btn-primary shop-item-button" type="button">ADD TO CART</button>
+                </div>
+            </div>
+            <div class="shop-item">
+                <span class="shop-item-title">Mix Sauce Pasta</span>
+                <img class="shop-item-image" src="https://b.zmtcdn.com/data/dish_photos/c90/11aafce9345aabe7409eacd66e1fbc90.jpg?fit=around|130:130&crop=130:130;*,*">
+                <h5 style="margin-left: 130px;">Pasta Made With Tomatoes, Bell Peppers, Onions, Garlic and Herbs.</h5>
+                <div class="rating" style="margin-left: 130px;">
+                          <span class="fa fa-star checked"></span>
+                          <span class="fa fa-star checked"></span>
+                          <span class="fa fa-star checked"></span>
+                          <span class="fa fa-star "></span>
+                          <span class="fa fa-star  "></span>
+                      </div>
+                <div class="shop-item-details">
+                    <span class="shop-item-price">₹ 220</span>
+                    <button class="btn btn-primary shop-item-button" type="button">ADD TO CART</button>
+                </div>
+            </div>
+            
+        </div>
+    </section><br>
+    <section class="container1 content-section">
+        <h2 class="section-header" id = "fries">Burgers</h2>
+        <div class="shop-items">
+            <div class="shop-item">
+                <span class="shop-item-title"> Veggie Burger</span>
+                <img class="shop-item-image" src="https://b.zmtcdn.com/data/dish_photos/523/df00e8d4df6d2347ecb7f7ce1d2f5523.jpg?fit=around|130:130&crop=130:130;*,*">
+                <h5 style="margin-left: 130px;">Veg patty covered with tomato, cucumber, lettuce and mayo.</h5>
+                <div class="rating" style="margin-left: 130px;">
+                          <span class="fa fa-star checked"></span>
+                          <span class="fa fa-star checked"></span>
+                          <span class="fa fa-star checked"></span>
+                          <span class="fa fa-star  checked"></span>
+                          <span class="fa fa-star  "></span>
+                      </div>
+                <div class="shop-item-details">
+                    <span class="shop-item-price">₹ 60</span>
+                    <button class="btn btn-primary shop-item-button" type="button">ADD TO CART</button>
+                </div>
+            </div>
+                <div class="shop-item">
+                    <span class="shop-item-title"> Double Cheese Veggie Burger </span>
+                    <img class="shop-item-image" src="https://b.zmtcdn.com/data/dish_photos/559/6cc657301cb476250f256f02e2776559.jpg?fit=around|130:130&crop=130:130;*,*">
+                    <h5 style="margin-left: 130px;">Extra cheese and mayo topping on veg patty, tomato, cucumber and lettuce. </h5>
+                    <div class="rating" style="margin-left: 130px;">
+                              <span class="fa fa-star checked"></span>
+                              <span class="fa fa-star checked"></span>
+                              <span class="fa fa-star checked"></span>
+                              <span class="fa fa-star  "></span>
+                              <span class="fa fa-star  "></span>
+                          </div>
+                    <div class="shop-item-details">
+                        <span class="shop-item-price">₹ 70</span>
+                        <button class="btn btn-primary shop-item-button" type="button">ADD TO CART</button>
+                    </div>
+                </div>
+        </div>
+    </section><br>
+    <section class="container1 content-section">
+        <h2 class="section-header" id = "puff">Sandwiches</h2>
+        <div class="shop-items">
+            <div class="shop-item">
+                <span class="shop-item-title"> Paneer Tikka Achari Sandwich </span>
+                <img class="shop-item-image" src="https://b.zmtcdn.com/data/dish_photos/0f6/de111c348b15b17e38caf99445a790f6.jpg?fit=around|130:130&crop=130:130;*,*">
+                <h5 style="margin-left: 130px;">Grilled Sandwiches are spiced with cilantro chutney, filled with achari paneer tikka and grilled to perfection</h5>
+                <div class="rating" style="margin-left: 130px;">
+                          <span class="fa fa-star checked"></span>
+                          <span class="fa fa-star checked"></span>
+                          <span class="fa fa-star checked"></span>
+                          <span class="fa fa-star  "></span>
+                          <span class="fa fa-star  "></span>
+                      </div>
+                <div class="shop-item-details">
+                    <span class="shop-item-price">₹ 160</span>
+                    <button class="btn btn-primary shop-item-button" type="button">ADD TO CART</button>
+                </div>
+            </div>  
+            <div class="shop-item">
+                <span class="shop-item-title"> Corn Mushroom Sandwich </span>
+                <img class="shop-item-image" src="https://i.ytimg.com/vi/ks3DE1COGTE/maxresdefault.jpg" width="100px">
+                <h5 style="margin-left: 130px;">Grilled Sandwiches are spiced with cilantro chutney, filled with corn and mushrrom and grilled to perfection</h5>
+                <div class="rating" style="margin-left: 130px;">
+                          <span class="fa fa-star checked"></span>
+                          <span class="fa fa-star checked"></span>
+                          <span class="fa fa-star checked"></span>
+                          <span class="fa fa-star  checked"></span>
+                          <span class="fa fa-star  "></span>
+                      </div>
+                <div class="shop-item-details">
+                    <span class="shop-item-price">₹ 150</span>
+                    <button class="btn btn-primary shop-item-button" type="button">ADD TO CART</button>
+                </div>
+            </div>  
+            <div class="shop-item">
+                <span class="shop-item-title">Chilli Paneer Sandwich  </span>
+                <img class="shop-item-image" src="https://static.toiimg.com/photo/58894412.cms">
+                <h5 style="margin-left: 130px;">Grilled Sandwiches are spiced with cilantro chutney, filled with  paneer and grilled to perfection</h5>
+                <div class="rating" style="margin-left: 130px;">
+                          <span class="fa fa-star checked"></span>
+                          <span class="fa fa-star checked"></span>
+                          <span class="fa fa-star checked"></span>
+                          <span class="fa fa-star  "></span>
+                          <span class="fa fa-star  "></span>
+                      </div>
+                <div class="shop-item-details">
+                    <span class="shop-item-price">₹ 160</span>
+                    <button class="btn btn-primary shop-item-button" type="button">ADD TO CART</button>
+                </div>
+            </div>  
+        </div>
+    </section><br>
+    <section class="container1 content-section">
+        <h2 class="section-header" id = "flurry">Uttapam</h2>
+        <div class="shop-items">
+            <div class="shop-item">
+                <span class="shop-item-title"> Mix Veg Uttapam</span>
+                <img class="shop-item-image" src="https://b.zmtcdn.com/data/dish_photos/c98/38f32d2d340470a60d03c5f40131bc98.jpg?fit=around|130:130&crop=130:130;*,*">
+                <h5 style="margin-left: 130px;">Thick and fluffy rice and lentil based pancake with all veggies toppings.</h5>
+                <div class="rating" style="margin-left: 130px;">
+                          <span class="fa fa-star checked"></span>
+                          <span class="fa fa-star checked"></span>
+                          <span class="fa fa-star checked"></span>
+                          <span class="fa fa-star  "></span>
+                          <span class="fa fa-star  "></span>
+                      </div>
+                <div class="shop-item-details">
+                    <span class="shop-item-price">₹ 150</span>
+                    <button class="btn btn-primary shop-item-button" type="button">ADD TO CART</button>
+                </div>
+            </div>  
+                <div class="shop-item">
+                    <span class="shop-item-title">Masala Uttapam</span>
+                    <img class="shop-item-image" src="https://b.zmtcdn.com/data/dish_photos/86e/ff50105ebe4f2fe91fce17a9f1a0f86e.jpg?fit=around|130:130&crop=130:130;*,*">
+                    <h5 style="margin-left: 130px;">Thick and fluffy rice and lentil based pancake with masala aloo and all veggies toppings.</h5>
+                    <div class="rating" style="margin-left: 130px;">
+                              <span class="fa fa-star checked"></span>
+                              <span class="fa fa-star checked"></span>
+                              <span class="fa fa-star checked"></span>
+                              <span class="fa fa-star  checked"></span>
+                              <span class="fa fa-star  "></span>
+                          </div>
+                    <div class="shop-item-details">
+                        <span class="shop-item-price">₹ 150</span>
+                        <button class="btn btn-primary shop-item-button" type="button">ADD TO CART</button>
+                    </div>
+                </div>  
+                <div class="shop-item">
+                    <span class="shop-item-title">Signature Uttapam</span>
+                    <img class="shop-item-image" src="https://b.zmtcdn.com/data/dish_photos/44c/33ed0e664ef646116f14d5760de0c44c.jpg?fit=around|130:130&crop=130:130;*,*">
+                    <h5 style="margin-left: 130px;">CHEF'S SPECIAL</h5>
+                    <div class="rating" style="margin-left: 130px;">
+                              <span class="fa fa-star checked"></span>
+                              <span class="fa fa-star checked"></span>
+                              <span class="fa fa-star checked"></span>
+                              <span class="fa fa-star  checked"></span>
+                              <span class="fa fa-star  "></span>
+                          </div>
+                    <div class="shop-item-details">
+                        <span class="shop-item-price">₹ 150</span>
+                        <button class="btn btn-primary shop-item-button" type="button">ADD TO CART</button>
+                    </div>
+                </div>  
+        </div>
+    </section><br>
+    <section class="container1 content-section">
+        <h2 class="section-header" id = "serve"> Dosa</h2>
+        <div class="shop-items">
+            <div class="shop-item">
+                <span class="shop-item-title">  Plain Dosa</span>
+                <img class="shop-item-image" src="https://b.zmtcdn.com/data/dish_photos/793/5653e5f3fb494822e7b50cf7b3295793.jpg?fit=around|130:130&crop=130:130;*,*">
+                <h5 style="margin-left: 130px;">Dosa is a popular South Indian thin crepe that is made of fermented rice and lentil batter, served with sambar and fresh coconut chutney.</h5>
+                <div class="rating" style="margin-left: 130px;">
+                          <span class="fa fa-star checked"></span>
+                          <span class="fa fa-star checked"></span>
+                          <span class="fa fa-star checked"></span>
+                          <span class="fa fa-star  "></span>
+                          <span class="fa fa-star  "></span>
+                      </div>
+                <div class="shop-item-details">
+                    <span class="shop-item-price">₹ 120</span>
+                    <button class="btn btn-primary shop-item-button" type="button">ADD TO CART</button>
+                </div>
+            </div>
+                <div class="shop-item">
+                    <span class="shop-item-title">Masala Dosa</span>
+                    <img class="shop-item-image" src="https://b.zmtcdn.com/data/dish_photos/078/dbcffeb70eb08ec763f8d00d38c69078.jpg?fit=around|130:130&crop=130:130;*,*">
+                    <h5 style="margin-left: 130px;">Crispy rice pancake filled with mildly spiced mashed potatoes.</h5>
+                    <div class="rating" style="margin-left: 130px;">
+                              <span class="fa fa-star checked"></span>
+                              <span class="fa fa-star checked"></span>
+                              <span class="fa fa-star checked"></span>
+                              <span class="fa fa-star  checked"></span>
+                              <span class="fa fa-star  "></span>
+                          </div>
+                    <div class="shop-item-details">
+                        <span class="shop-item-price">₹ 140</span>
+                        <button class="btn btn-primary shop-item-button" type="button">ADD TO CART</button>
+                    </div>
+                </div>  
+                    <div class="shop-item">
+                        <span class="shop-item-title">Onion Masala Dosa</span>
+                        <img class="shop-item-image" src="https://b.zmtcdn.com/data/dish_photos/e81/b692b21fb99337a37f53372c93b67e81.jpg?fit=around|130:130&crop=130:130;*,*">
+                        <h5 style="margin-left: 130px;">Crispy rice pancake cooked with finely chopped red onions, filled with mashed potatoes. </h5>
+                        <div class="rating" style="margin-left: 130px;">
+                                  <span class="fa fa-star checked"></span>
+                                  <span class="fa fa-star checked"></span>
+                                  <span class="fa fa-star checked"></span>
+                                  <span class="fa fa-star  checked"></span>
+                                  <span class="fa fa-star  "></span>
+                              </div>
+                        <div class="shop-item-details">
+                            <span class="shop-item-price">₹ 150</span>
+                            <button class="btn btn-primary shop-item-button" type="button">ADD TO CART</button>
+                        </div>
+                    </div>  
+                    <div class="shop-item">
+                        <span class="shop-item-title">Mysore Plain Dosa</span>
+                        <img class="shop-item-image" src="https://b.zmtcdn.com/data/dish_photos/642/fca3b7c3c777849fbbd2a76aefb6b642.jpg?fit=around|130:130&crop=130:130;*,*">
+                        <h5 style="margin-left: 130px;">Thin and crispy golden rice pancake</h5>
+                        <div class="rating" style="margin-left: 130px;">
+                                  <span class="fa fa-star checked"></span>
+                                  <span class="fa fa-star checked"></span>
+                                  <span class="fa fa-star checked"></span>
+                                  <span class="fa fa-star  checked"></span>
+                                  <span class="fa fa-star  "></span>
+                              </div>
+                        <div class="shop-item-details">
+                            <span class="shop-item-price">₹ 160</span>
+                            <button class="btn btn-primary shop-item-button" type="button">ADD TO CART</button>
+                        </div>
+                    </div>  
+        </div>
+    </section><br>
+    <section class="container1 content-section">
+        <h2 class="section-header" id = "pud">Vada </h2>
+        <div class="shop-items">
+            <div class="shop-item">
+                <span class="shop-item-title">Vada Sambar</span>
+                <img class="shop-item-image" src="https://b.zmtcdn.com/data/dish_photos/6c1/77503ed200422faafdc1f8e6201096c1.jpg?fit=around|130:130&crop=130:130;*,*">
+                <h5 style="margin-left: 130px;">Deep fried lentil batter mixed with mild spices and herbs. Served with sambar and chutneys.</h5>
+                <div class="rating" style="margin-left: 130px;">
+                          <span class="fa fa-star checked"></span>
+                          <span class="fa fa-star checked"></span>
+                          <span class="fa fa-star checked"></span>
+                          <span class="fa fa-star  "></span>
+                          <span class="fa fa-star  "></span>
+                      </div>
+                <div class="shop-item-details">
+                    <span class="shop-item-price">₹ 100</span>
+                    <button class="btn btn-primary shop-item-button" type="button">ADD TO CART</button>
+                </div>
+            </div>  
+                <div class="shop-item">
+                    <span class="shop-item-title">Dahi Sweet Vada</span>
+                    <img class="shop-item-image" src="https://b.zmtcdn.com/data/dish_photos/c1d/ee572b4b9747c78b8eda3a17ac244c1d.jpg?fit=around|130:130&crop=130:130;*,*">
+                    <h5 style="margin-left: 130px;">Vada soaked in fresh sweet curd, seasoned with natural aromatic herbs and spices.  </h5>
+                    <div class="rating" style="margin-left: 130px;">
+                              <span class="fa fa-star checked"></span>
+                              <span class="fa fa-star checked"></span>
+                              <span class="fa fa-star checked"></span>
+                              <span class="fa fa-star  checked"></span>
+                              <span class="fa fa-star  "></span>
+                          </div>
+                    <div class="shop-item-details">
+                        <span class="shop-item-price">₹ 70</span>
+                        <button class="btn btn-primary shop-item-button" type="button">ADD TO CART</button>
+                    </div>
+                </div>  
+           
+        </div>
+    </section><br>
+    <section class="container1 content-section">
+        <h2 class="section-header" id = "soft">Soups</h2>
+        <div class="shop-items">
+            <div class="shop-item">
+                <span class="shop-item-title">Veg Manchow Soup</span>
+                <img class="shop-item-image" src="https://b.zmtcdn.com/data/dish_photos/1df/b51fc3ad4d529ec447cb34341bfa01df.jpg?fit=around|130:130&crop=130:130;*,*">
+                <div class="rating" style="margin-left: 130px;">
+                          <span class="fa fa-star checked"></span>
+                          <span class="fa fa-star checked"></span>
+                          <span class="fa fa-star checked"></span>
+                          <span class="fa fa-star  "></span>
+                          <span class="fa fa-star  "></span>
+                      </div>
+                <div class="shop-item-details">
+                    <span class="shop-item-price">₹80 </span>
+                    <button class="btn btn-primary shop-item-button" type="button">ADD TO CART</button>
+                </div>
+            </div>  
+                <div class="shop-item">
+                    <span class="shop-item-title"> Hot and Sour Soup</span>
+                    <img class="shop-item-image" src="https://b.zmtcdn.com/data/dish_photos/8a4/83d405466a84c9ca17911b48088dc8a4.jpg?fit=around|130:130&crop=130:130;*,*">
+                    <div class="rating" style="margin-left: 130px;">
+                              <span class="fa fa-star checked"></span>
+                              <span class="fa fa-star checked"></span>
+                              <span class="fa fa-star checked"></span>
+                              <span class="fa fa-star  checked"></span>
+                              <span class="fa fa-star  "></span>
+                          </div>
+                    <div class="shop-item-details">
+                        <span class="shop-item-price">₹ 80</span>
+                        <button class="btn btn-primary shop-item-button" type="button">ADD TO CART</button>
+                    </div>
+                </div>  
+                    <div class="shop-item">
+                        <span class="shop-item-title">Veg Sweet Corn Soup</span>
+                        <img class="shop-item-image" src="https://b.zmtcdn.com/data/dish_photos/446/7bd57abd5f445eaacc368da207f3f446.jpg?fit=around|130:130&crop=130:130;*,*">
+                        <div class="rating" style="margin-left: 130px;">
+                                  <span class="fa fa-star checked"></span>
+                                  <span class="fa fa-star checked"></span>
+                                  <span class="fa fa-star checked"></span>
+                                  <span class="fa fa-star  "></span>
+                                  <span class="fa fa-star  "></span>
+                              </div>
+                        <div class="shop-item-details">
+                            <span class="shop-item-price">₹ 80 </span>
+                            <button class="btn btn-primary shop-item-button" type="button">ADD TO CART</button>
+                        </div>
+                    </div>  
+                    <div class="shop-item">
+                        <span class="shop-item-title"> Clear Soup</span>
+                        <img class="shop-item-image" src="https://b.zmtcdn.com/data/dish_photos/e97/9a85132d00d6b612d10e362bc265fe97.jpg?fit=around|130:130&crop=130:130;*,*">
+                        <div class="rating" style="margin-left: 130px;">
+                                  <span class="fa fa-star checked"></span>
+                                  <span class="fa fa-star checked"></span>
+                                  <span class="fa fa-star checked"></span>
+                                  <span class="fa fa-star  "></span>
+                                  <span class="fa fa-star  "></span>
+                              </div>
+                        <div class="shop-item-details">
+                            <span class="shop-item-price">₹ 80 </span>
+                            <button class="btn btn-primary shop-item-button" type="button">ADD TO CART</button>
+                        </div>
+                    </div>  
+        </div>
+    </section><br>
+    
+
+        <section class="container3 content-section">
+            <h2 class="section-header">CART</h2>
+            <div class="cart-row">
+                <span class="cart-item cart-header cart-column">ITEM</span>
+                <span class="cart-price cart-header cart-column">PRICE</span>
+                <span class="cart-quantity cart-header cart-column">QUANTITY</span>
+            </div>
+            <div class="cart-items">
+            </div>
+            <div class="cart-total">
+                <strong class="cart-total-title">Total</strong>
+                <span class="cart-total-price">₹ 0</span>
+            </div>
+            <a href="payment.html"></a><button class="btn btn-primary btn-purchase" type="button">PURCHASE</button></a>
+        </section>
+
+
+        <script>
+            if (document.readyState == 'loading') {
+    document.addEventListener('DOMContentLoaded', ready)
+} else {
+    ready()
+}
+
+function ready() {
+    var removeCartItemButtons = document.getElementsByClassName('btn-danger')
+    for (var i = 0; i < removeCartItemButtons.length; i++) {
+        var button = removeCartItemButtons[i]
+        button.addEventListener('click', removeCartItem)
+    }
+
+    var quantityInputs = document.getElementsByClassName('cart-quantity-input')
+    for (var i = 0; i < quantityInputs.length; i++) {
+        var input = quantityInputs[i]
+        input.addEventListener('change', quantityChanged)
+    }
+
+    var addToCartButtons = document.getElementsByClassName('shop-item-button')
+    for (var i = 0; i < addToCartButtons.length; i++) {
+        var button = addToCartButtons[i]
+        button.addEventListener('click', addToCartClicked)
+    }
+
+    document.getElementsByClassName('btn-purchase')[0].addEventListener('click', purchaseClicked)
+}
+
+function purchaseClicked() {
+    alert('Thank you for your purchase')
+    var cartItems = document.getElementsByClassName('cart-items')[0]
+    while (cartItems.hasChildNodes()) {
+        cartItems.removeChild(cartItems.firstChild)
+    }
+    updateCartTotal()
+}
+
+function removeCartItem(event) {
+    var buttonClicked = event.target
+    buttonClicked.parentElement.parentElement.remove()
+    updateCartTotal()
+}
+
+function quantityChanged(event) {
+    var input = event.target
+    if (isNaN(input.value) || input.value <= 0) {
+        input.value = 1
+    }
+    updateCartTotal()
+}
+
+function addToCartClicked(event) {
+    var button = event.target
+    var shopItem = button.parentElement.parentElement
+    var title = shopItem.getElementsByClassName('shop-item-title')[0].innerText
+    var price = shopItem.getElementsByClassName('shop-item-price')[0].innerText
+    var imageSrc = shopItem.getElementsByClassName('shop-item-image')[0].src
+    addItemToCart(title, price, imageSrc)
+    updateCartTotal()
+}
+
+function addItemToCart(title, price, imageSrc) {
+    var cartRow = document.createElement('div')
+    cartRow.classList.add('cart-row')
+    var cartItems = document.getElementsByClassName('cart-items')[0]
+    var cartItemNames = cartItems.getElementsByClassName('cart-item-title')
+    for (var i = 0; i < cartItemNames.length; i++) {
+        if (cartItemNames[i].innerText == title) {
+            alert('This item is already added to the cart')
+            return
+        }
+    }
+    var cartRowContents = `
+        <div class="cart-item cart-column">
+            <img class="cart-item-image" src="${imageSrc}" width="100" height="100">
+            <span class="cart-item-title">${title}</span>
+        </div>
+        <span class="cart-price cart-column">${price}</span>
+        <div class="cart-quantity cart-column">
+            <input class="cart-quantity-input" type="number" value="1">
+            <button class="btn btn-danger" type="button">REMOVE</button>
+        </div>`
+    cartRow.innerHTML = cartRowContents
+    cartItems.append(cartRow)
+    cartRow.getElementsByClassName('btn-danger')[0].addEventListener('click', removeCartItem)
+    cartRow.getElementsByClassName('cart-quantity-input')[0].addEventListener('change', quantityChanged)
+}
+
+function updateCartTotal() {
+    var cartItemContainer = document.getElementsByClassName('cart-items')[0]
+    var cartRows = cartItemContainer.getElementsByClassName('cart-row')
+    var total = 0
+    for (var i = 0; i < cartRows.length; i++) {
+        var cartRow = cartRows[i]
+        var priceElement = cartRow.getElementsByClassName('cart-price')[0]
+        var quantityElement = cartRow.getElementsByClassName('cart-quantity-input')[0]
+        var price = parseFloat(priceElement.innerText.replace('₹', ''))
+        var quantity = quantityElement.value
+        total = total + (price * quantity)
+    }
+    total = Math.round(total * 100) / 100
+    document.getElementsByClassName('cart-total-price')[0].innerText = '₹' + total
+}
+        </script>
+      
+
+      </div>
+   </div>  
+</body>
+</html>
